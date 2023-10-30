@@ -1,0 +1,23 @@
+<h1>Profile Update </h1>
+
+<%= form_with model: @article, url: user_path(@article) do |form| %>
+
+<div>
+    <%= form.label :email %>
+    <%= @article.email %>
+</div>
+
+<div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+</div>
+ 
+<div>
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+</div>
+
+<div>
+    <%= form.submit "update" %>
+</div>
+<% end %>

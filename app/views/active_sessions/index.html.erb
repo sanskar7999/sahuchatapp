@@ -1,0 +1,16 @@
+<%# <%= render partial: "active_session"%> 
+
+<h1>sessions</h1>
+
+<ul>
+  <% @active_sessions.each do |active_session| %>
+
+      <tr>
+        <b>System details </b>- <td><%= active_session.user_agent %></td> <br>
+        <b>ip_address</b>- <td><%= active_session.ip_address %></td><br>
+        <b>Login date and time </b>- <td><%= active_session.created_at.in_time_zone('Asia/Kolkata').strftime("%d-%m-%Y %I:%M:%S %p") %></td><br>
+        <td><%= button_to "Sign Out", active_session_path(active_session), method: :delete %></td>
+    </tr>
+
+  <% end %>
+</ul>

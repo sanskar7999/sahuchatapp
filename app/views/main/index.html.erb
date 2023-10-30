@@ -1,0 +1,12 @@
+<b> <h1> Welcome To Our Wourld Class Web </h1> </b>
+
+<% if user_signed_in?%>
+<h3> Welcome <%= current_user.name %>  </h3>
+
+<%= form_for current_user, url: user_path(current_user), method: :patch do |f| %>
+  <%= f.hidden_field :avatar, value: nil %>
+  <%= f.submit 'Remove Picture' %>
+<% end %>
+
+<%= link_to "edit profile", edit_user_path(current_user) %>
+<% end %>
